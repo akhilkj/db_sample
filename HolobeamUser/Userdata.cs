@@ -11,49 +11,47 @@ namespace HolobeamUser
 {
     public class Userdata
     {
-       
-       
-            //public async System.Threading.Tasks.Task PostUserAsync(string uname, string email, string photo)
-            //{
-            //    using (var client = new HttpClient())
-            //    {
-            //        var values = new Dictionary<string, string>
-            //    {
-            //     { "username", uname },
-            //     { "emailid", email },
-            //     {"photo", photo }
-            //    };
 
-            //        var content = new FormUrlEncodedContent(values);
 
-            //        var response = await client.PostAsync("http://localhost:60261/api/Values/AddingUser", content);
-
-            //        var responseString = await response.Content.ReadAsStringAsync();
-            //    }
-            //}
-
-        public void PostUser(string uname, string email, string photo)
+        public async System.Threading.Tasks.Task PostUserAsync(string uname, string email, string photo)
         {
-            using (var client = new WebClient())
+            using (var client = new HttpClient())
             {
-                var values = new NameValueCollection();
-                values["username"] = uname;
-                values["emailid"] = email;
-                values["photo"] = photo;
+                var values = new Dictionary<string, string>
+            {
+             { "username", uname },
+             { "emailid", email },
+             {"photo", photo }
+            };
 
-                var response = client.UploadValues("http://localhost:60261/api/Values/AddingUser", values);
+                var content = new FormUrlEncodedContent(values);
 
-                var responseString = Encoding.Default.GetString(response);
+                var response = await client.PostAsync("http://localhost:60261/api/Values/AddingUser", content);
+
+                var responseString = await response.Content.ReadAsStringAsync();
             }
-
+            
         }
+
+        //public void PostUser(string uname, string email, string photo)
+        //{
+
+        //    //using (var client = new WebClient())
+        //    //{
+        //    //    var values = new NameValueCollection();
+        //    //    values["username"] = uname;
+        //    //    values["emailid"] = email;
+        //    //    values["photo"] = photo;
+
+        //    //    var response = client.UploadValues("http://localhost:60261/api/Values/AddingUser", values);
+
+        //    //    var responseString = Encoding.Default.GetString(response);
+        //    //}
+
+        //}
         public void GetUser(string Username)
         {
-            //using (var client = new WebClient())
-            //{
-
-            //    var responseString = client.DownloadString("http://localhost:60261/api/Values/GetDetails?uname=ashik");
-            //}
+            
             using (var client = new System.Net.Http.HttpClient())
             {
                 // HTTP POST

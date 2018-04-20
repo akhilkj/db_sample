@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolobeamUser", "HolobeamUser\HolobeamUser.csproj", "{49ACB3F8-2EAA-4411-A95A-7941D25F5FC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlobAccessApi", "..\..\..\..\Source\Repos\BlobAccessApi\BlobAccessApi\BlobAccessApi.csproj", "{24B5D1E7-A622-4AEC-B28C-079895C74F84}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlobAccessApi", "BlobAccessApi\BlobAccessApi.csproj", "{24B5D1E7-A622-4AEC-B28C-079895C74F84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
